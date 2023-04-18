@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0; 
+        }
+        .header{
+            color: white;
+            font-size: 2em;
+            background-color: darkcyan;
+            text-align: center;
+            border: 1px solid darkcyan;
+            border-bottom: none;
+            border-radius: 10px 10px 0px 0px;
+            padding: 20px;
+            width: 30%;
+            margin: 50px auto 0px;
+        }
+        .login{
+            margin: 10px 0px 10px 0px;
+        }
+        .login label{
+            display: block;
+            text-align: left;
+            margin: 3px;
+        }
+        .login input{
+            height: 30px;
+            width: 93%;
+            padding: 5px 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid lime;
+        }
+        form{
+            background-color: white;
+            width: 30%;
+            margin: 0px auto;
+            padding: 20px;
+            border: 1px solid darkcyan;
+            border-radius: 0px 0px 10px 10px;
+        }
+        .button{
+            background-color: darkcyan;
+            padding: 20px 50px;
+            border: 1px solid darkcyan;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Login
+    </div>
+    <form>
+        <div class="login">
+            <label>Username</label>
+            <input type="text" name="username">
+        </div>
+        <div class="login">
+            <label>Password</label>
+            <input type="password" name="password">
+        </div>
+        <div class="login">
+            <button type="submit" class="button" name="login_user">Login</button>
+        </div>
+    </form>
+</body>
+</html>
