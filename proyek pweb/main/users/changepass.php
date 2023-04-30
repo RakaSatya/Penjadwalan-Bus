@@ -1,5 +1,5 @@
+<?php include ('../server.php')?>
 <?php
-session_start();
 if(
     //isset($_SESSION['id']) && 
     isset($_SESSION['username'])){
@@ -43,7 +43,7 @@ if(
                     </ul>
                 </div>
                 <div class="wrap">
-                    <form action="latihanprofile.php" method="POST">     
+                    <form action="changepass.php" method="POST">     
                         <div class="inputChanges">
                             <label>Current Password</label>
                             <input type = "text" name="oldPass">
@@ -65,7 +65,7 @@ if(
     <?php
 }
 else{
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit();
 }
 ?>

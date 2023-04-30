@@ -65,16 +65,6 @@ if(isset($_POST['change_pass'])){
   $newPass_2 = md5($_POST['newPass_2']);
   $oldPassDB = $_SESSION['password'];
   $username = $_SESSION['username'];
-  echo $username;
-  echo '<br>';
-  echo $oldPassDB;
-  echo '<br>';
-  echo $oldPass;
-  echo '<br>';
-  echo $newPass_1;
-  echo '<br>';
-  echo $newPass_2;
-  echo '<br>';
   // validate that the input are corrects
   if (empty($oldPass)) { array_push($errors, "Old Pass is required"); }
   if (empty($newPass_1)) { array_push($errors, "New Pass is required"); }
@@ -87,7 +77,7 @@ if(isset($_POST['change_pass'])){
   
   if (count($errors) == 0) {
     $querychange = "UPDATE `users` SET `password` = '$newPass_1' WHERE `username` = '$username'";
-    header('location: index.php');
+    header('location: ../index.php');
     $resultupdate = mysqli_query($db, $querychange);
   }
 }
@@ -110,10 +100,9 @@ if (isset($_POST['login_user'])) {
   	$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
   	$results = mysqli_query($db, $query);
     $rs = mysqli_fetch_array($results);
-    
   	if (mysqli_num_rows($results) == 1) {
-	$phone = $rs['phone'];
-    	$email = $rs['email'];
+      $phone = $rs['phone'];
+      $email = $rs['email'];
   	  $_SESSION['username'] = $username;
       $_SESSION['email'] = $email;
       $_SESSION['phone'] = $phone;
