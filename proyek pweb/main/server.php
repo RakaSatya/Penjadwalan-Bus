@@ -110,9 +110,10 @@ if (isset($_POST['login_user'])) {
   	$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
   	$results = mysqli_query($db, $query);
     $rs = mysqli_fetch_array($results);
-    $phone = $rs['phone'];
-    $email = $rs['email'];
+    
   	if (mysqli_num_rows($results) == 1) {
+	$phone = $rs['phone'];
+    	$email = $rs['email'];
   	  $_SESSION['username'] = $username;
       $_SESSION['email'] = $email;
       $_SESSION['phone'] = $phone;
