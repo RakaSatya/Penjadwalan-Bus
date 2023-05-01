@@ -29,7 +29,7 @@ session_start();
     <header>
         <div class="header">
             <div class="logo">
-                <img src ="../src/css/images/logo3.png">
+                <img src ="css/images/logo3.png">
             </div>
             <ul>
                 <li><a href = "#" class="gradient">Home</a></li>

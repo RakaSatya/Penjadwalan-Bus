@@ -24,7 +24,7 @@ if(
                 </div>
                 <div class = "admin-sidebar">
                     <ul class = "admin-menulist">
-                        <li class="admin-menuitem"><a href="home.php">Home Page</a></li>
+                        <li class="admin-menuitem"><a href="../home.php">Home Page</a></li>
                         <li class="admin-menuitem"><a href="searchbus.php">Order Ticket</a></li>
                         <li class="admin-menuitem"><a href="../home.php?logout='1'">Log Out</a></li>
                     </ul>

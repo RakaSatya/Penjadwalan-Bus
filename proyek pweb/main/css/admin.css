@@ -1,0 +1,235 @@
+/* MAIN CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(113.03175635263142deg, rgba(226, 235, 239,1) 4.980042575838212%,rgba(208, 218, 224,1) 97.74215007982968%);
+}
+.fixed{
+    float: left;
+    background:linear-gradient(113.03175635263142deg, rgba(149, 168, 181,1) 4.980042575838212%,rgba(61, 72, 78,1) 97.74215007982968%);
+    height: 100vh;
+    width: 25vh;
+    color: whitesmoke;
+    position: fixed;
+}
+
+.fixed .admin-sidebar .admin-menulist{
+    line-height: 40px;
+}
+
+.fixed .admin-sidebar .admin-menulist .admin-menuitem{
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    
+}
+
+.fixed .admin-sidebar .admin-menulist .admin-menuitem:hover{
+    background-color: rgba(208, 218, 224,0.4);
+    color: red;
+}
+
+li{
+    margin: 10px 0px;
+    list-style: none;
+    text-decoration: none;
+    margin: auto;
+    width: 80%;
+    display: list-item;
+}
+
+.fixed .header{
+
+    height: 70px;
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 10px;
+    border-bottom: 2px solid white;
+}
+.admin{
+    margin-top: 5px;
+    height: 60px;
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 2px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid white;
+}
+
+
+.header-top{
+    background-color:rgba(64, 73, 81, 0.76);
+    height: 70px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    padding-top: 12px;
+}
+/* Schedule Site CSS*/
+.schedule .header{
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    background-color: #686d74;
+    text-align: center;
+    height: 70px;
+}
+.schedule .scheduleForm{
+    background-color: #686d74;
+    color: black;
+}
+.scheduleForm{
+    background-color: blanchedalmond;
+    margin: auto;
+    font-weight: bold;
+    text-align: left;
+    font-size: 20px;
+    margin-top: 50px;
+    width: 60%;
+    padding: 20px 0px;
+    border-radius: 20px;
+}
+.schedule .scheduleForm input{
+    margin: 0px 10%;
+}
+.schedule .scheduleForm input[type=text], 
+.schedule .scheduleForm textarea, 
+.schedule .scheduleForm input[type=password], 
+.schedule .scheduleForm input[type=number]{
+    width: 50%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+.schedule .scheduleForm input[type="date"], 
+.schedule .scheduleForm input[type="submit"]{
+    background-color: #413b3b;
+    color: #fff;
+    padding: 15px 59px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 20px;
+}
+
+/* Admin Profile CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.profile{
+    margin-left: 20%;
+    padding-top: 10px;
+    width: 20%;
+    height: 30px;
+    font-size: 1.5rem;
+}
+body{
+    background-color: #d6d6d6;
+}
+.adminContent{
+    width: 100%;
+    height: 500px;
+    margin-top: 10vh;
+}
+.adminContent .sideBar{
+    padding: 20px 10px;
+    float: left;
+    margin-left: 45vh;
+    z-index: 2;
+    display: block;
+    font-size: 14px;
+    color: rgb(51,51,51);
+    border: 1px solid rgb(230,230,230);
+    border-radius: 5px;
+    background-color: #fff;
+    height: 200px;
+    width: 250px;
+}
+.adminContent .sideBar .menu-list{
+    display: block;
+}
+.adminContent .sideBar ul .menu-item{
+    padding: 10px 0px;
+    line-height: 20px;
+    color: rgb(121,121,121);
+    font-size: 20px;
+    position: relative;
+    -webkit-tap-highlight-color: #fff;
+    cursor: pointer;
+}
+.adminContent .sideBar ul .menu-selected{
+    border-left: 5px solid blue;
+    margin-left: 0px;
+    padding-left: 20px;
+    border-radius: 5px 0px 0px 5px;
+    color: royalblue !important;
+}
+
+.adminContent .wrap{
+    display: inline-block;
+    background-color: white;
+    width: 40%;
+    height: auto;
+    margin-left: 100px;
+    float: left;
+    border: 1px solid rgb(230,230,230);
+    border-radius: 10px;
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+}
+.adminContent .wrap .inputChanges{
+    margin: 30px 0px 10px 10px;
+}
+.inputChanges label{
+    display: block;
+    text-align: left;
+    margin: 3px;
+}
+.inputChanges input{
+    height: 30px;
+    width: 93%;
+    padding: 5px 10px;
+    font-size: 1em;
+    border: 5px;
+    border: 1px solid darkcyan;
+    border-radius: 5px;
+}
+
+.adminContent .wrap input[type=text], 
+.adminContent .wrap textarea, 
+.adminContent .wrap input[type=password], 
+.adminContent .wrap input[type=number], 
+.adminContent .wrap input[type=email]{
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    resize: vertical;
+}
+.adminContent .wrap form input[type="submit"]{
+    background-color: #413b3b;
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 10px;
+    font-weight: bold;
+}
