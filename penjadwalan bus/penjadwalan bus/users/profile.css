@@ -1,0 +1,112 @@
+body.dark{
+    --box-clr: #4c4e55;
+    --ptext-clr: #48ABFF;
+    --pinactive-clr: #8E9098;
+}
+.content{
+    position: relative;
+    left: 250px;
+    background-color: var(--main-clr);
+    min-height: 100vh;
+    width: calc(100% - 250px);
+    padding: 10px 14px;
+    display: flex;
+    justify-content: left;
+    transition: var(--tran-05);
+}
+
+.side-bar{
+    padding: 20px 10px;
+    float: left;
+    margin-left: 200px;
+    margin-top: 100px;
+    z-index: 2;
+    display: block;
+    font-size: 14px;
+    color: rgb(51,51,51);
+    border-radius: 5px;
+    background-color: var(--box-clr);
+    height: 200px;
+    width: 250px;
+}
+.side-bar .profile-menu{
+    display: block;
+}
+.profile-menu .profile-menu-list{
+    padding: 10px 0px;
+    line-height: 20px;
+    color: var(--pinactive-clr);
+    font-size: 20px;
+    position: relative;
+    -webkit-tap-highlight-color: #fff;
+    cursor: pointer;
+    list-style: none;
+    text-decoration: none;
+    margin: auto;
+    width: 80%;
+    display: list-item;
+}
+
+.profile-menu-list.selected{
+    border-left: 5px solid var(--ptext-clr);
+    margin-left: 0px;
+    padding-left: 20px;
+    border-radius: 5px 0px 0px 5px;
+    color: var(--ptext-clr);
+}
+.profile-info{
+    position: relative;
+    height: min-content;
+    display: inline-block;
+    background-color: var(--box-clr);
+    width: 40%;
+    margin-top: 100px;
+    margin-left: 100px;
+    float: left;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+}
+form.inactive{
+    display: none;
+    visibility: hidden;
+}
+.profile-info form .inputChanges{
+    margin: 30px 0px 10px 10px;
+}
+.inputChanges label{
+    display: block;
+    text-align: left;
+    margin: 3px;
+}
+.inputChanges input{
+    height: 30px;
+    width: 93%;
+    padding: 5px 10px;
+    font-size: 1em;
+    border: 5px;
+    border: 1px solid darkcyan;
+    border-radius: 5px;
+}
+form input[type=text]:not(input[type="submit"]){
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    resize: vertical;
+}
+form input[type="submit"]{
+    background-color: #413b3b;
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 20px 20px 20px 10px;
+    font-weight: bold;
+}
