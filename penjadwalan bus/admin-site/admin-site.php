@@ -215,6 +215,7 @@ if (isset($_POST['reset']) || isset($_SESSION['formDone']) || isset($_SESSION['e
                         <select name="bus_company">
                             <option value="Agra Mas">Agra Mas</option>
                             <option value="Putra Jaya">Putra Jaya</option>
+                            <option value="PT Sinar Jaya">PT Sinar Jaya</option>
                         </select>
                         <button type="submit" name="submitC">Submit</button>
                         <button type="submit" name="reset">Reset</button>
