@@ -163,6 +163,12 @@ if (isset($_POST['reset']) || isset($_SESSION['formDone']) || isset($_SESSION['e
             </ul>
             <ul class="menu-2">
                 <li class="menu-items">
+                    <a href="../index/index.php">
+                        <i class="uil uil-home"></i>
+                        <p>Home</p>
+                    </a>
+                </li>
+                <li class="menu-items">
                     <a href="admin-site.php?logout='1'">
                         <i class="uil uil-signout"></i>
                         <p>Log Out</p>
@@ -240,10 +246,14 @@ if (isset($_POST['reset']) || isset($_SESSION['formDone']) || isset($_SESSION['e
                         <input type="hidden" name="form_token" value="<?php echo $_SESSION['form_token']; ?>">
                         <select name="departure_location" id="">
                             <option value="Jakarta">Jakarta</option>
+                            <option value="Surabaya">Surabaya</option>
+                            <option value="Yogyakarta">Yogyakarta</option>
                             <option value="Bandung">Bandung</option>
                         </select>
                         <select name="arrival_location" id="">
                             <option value="Jakarta">Jakarta</option>
+                            <option value="Surabaya">Surabaya</option>
+                            <option value="Yogyakarta">Yogyakarta</option>
                             <option value="Bandung">Bandung</option>
                         </select>
                         <input type="datetime-local" name="departure_time" id="" required>

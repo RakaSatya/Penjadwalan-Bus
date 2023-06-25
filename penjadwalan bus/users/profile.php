@@ -56,6 +56,12 @@ if(isset($_GET['logout'])){
             </ul>
             <ul class="menu-2">
                 <li class="menu-items">
+                    <a href="../index/index.php">
+                        <i class="uil uil-home"></i>
+                        <p>Home</p>
+                    </a>
+                </li>
+                <li class="menu-items">
                     <a href="profile.php?logout='1'">
                         <i class="uil uil-signout"></i>
                         <p>Log Out</p>

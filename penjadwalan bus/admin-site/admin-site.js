@@ -1,8 +1,26 @@
 // Dark Mode and Close Nav
-document.querySelector(".mode").
-addEventListener("click",()=>{
-    document.querySelector("body").classList.toggle("dark");
-})
+
+// Check if 'darkMode' exists in localStorage, if not, set it to 'false'
+if (localStorage.getItem('darkMode') === null) {
+    localStorage.setItem('darkMode', 'false');
+}
+  
+// Get the current dark mode value from localStorage and convert it to a boolean
+let darkMode = localStorage.getItem('darkMode') === 'true';
+  
+// Apply the dark mode class to the body on page load
+document.querySelector("body").classList.toggle("dark", darkMode);
+
+document.querySelector(".mode").addEventListener("click", () => {
+    // Toggle the dark mode value
+    darkMode = !darkMode;
+
+    // Apply the dark mode class to the body
+    document.querySelector("body").classList.toggle("dark", darkMode);
+
+    // Update the dark mode value in localStorage as a string
+    localStorage.setItem('darkMode', darkMode.toString());
+});
 
 document.querySelector(".close-btn").
 addEventListener("click", function(){
