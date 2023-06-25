@@ -17,7 +17,7 @@ CREATE TABLE bus_schedule (
   from_time DATETIME NOT NULL,
   to_time DATETIME NOT NULL,
   seats INT NOT NULL,
-  price DECIMAL(10, 2) NOT NULL,
+  price INT NOT NULL,
   FOREIGN KEY (bus_company) REFERENCES bus_list(bus_company),
   FOREIGN KEY (bus_code) REFERENCES bus_list(bus_code)
 ) ENGINE=InnoDB;
@@ -28,5 +28,5 @@ CREATE TABLE users (
   username VARCHAR(255) NOT NULL UNIQUE,
   password VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL UNIQUE,
-  saldo DECIMAL(10, 2) NOT NULL
+  saldo INT NOT NULL
 );
