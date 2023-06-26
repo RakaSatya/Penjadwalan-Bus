@@ -74,7 +74,7 @@
                     <input type="text" name = "email"placeholder="Email">
                     <input type="text" name = "username" placeholder="Username">
                     <input type="password" name = "password_1" placeholder="Password">
-                    <input type="password2" name = "password_2" placeholder="Confirm Password">
+                    <input type="password" name = "password_2" placeholder="Confirm Password">
                     <input type="submit" name = "regBtn" value="Register">
                 </form>
                 <div class="alr-have-acc">

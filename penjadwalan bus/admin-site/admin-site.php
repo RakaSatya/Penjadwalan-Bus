@@ -85,6 +85,8 @@ if(!isset($_SESSION['selected_date'])){
     $_SESSION['selected_date'] = date("Y-m-d");
     $selected_date = $_SESSION['selected_date'];
     $event_query = "SELECT * FROM bus_schedule WHERE DATE(departure_time) = '$selected_date'";
+    //$event_query = "SELECT * FROM bus_schedule WHERE DATE('$selected_date') BETWEEN DATE(departure_time) AND DATE(arrival_time)";
+
     $event_array = mysqli_query($db, $event_query);
 }
 
