@@ -31,6 +31,7 @@ body.dark{
     --tran-03: all 0.3s ease;
     --tran-03: all 0.2s ease;
 }
+
 .nav{
     position: fixed;
     left: 0;
@@ -374,7 +375,7 @@ body.dark .switch:before{
     position: relative; 
     display: flex;
     justify-content: center;
-    min-height: 80px;
+    min-height: 100px;
     padding-left: 70px;
 }
 .event-item .x{
@@ -386,10 +387,23 @@ body.dark .switch:before{
 .event-title, .event-time{
     width: 70%;
 }
-.event-time{
+.event-time {
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
+
+.event-time .d-time,
+.event-time .arrow,
+.event-time .a-time {
+    flex: 1;
+}
+
+.event-time .d-time,
+.event-time .a-time {
+    text-align: center;
+}
+  
 .event-item .price{
     width: 30%;
     margin-left: auto;

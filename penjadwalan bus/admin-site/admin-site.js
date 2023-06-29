@@ -1,13 +1,14 @@
 // Dark Mode and Close Nav
 
 // Check if 'darkMode' exists in localStorage, if not, set it to 'false'
+
 if (localStorage.getItem('darkMode') === null) {
     localStorage.setItem('darkMode', 'false');
 }
-  
+
 // Get the current dark mode value from localStorage and convert it to a boolean
 let darkMode = localStorage.getItem('darkMode') === 'true';
-  
+
 // Apply the dark mode class to the body on page load
 document.querySelector("body").classList.toggle("dark", darkMode);
 
@@ -68,10 +69,12 @@ const renderCalendar = () => {
         liTag += `<div class="day"><button type = "submit" name = "select_date"
         value = "${currYear}-${monthplusone}-${i}">${i}</button></div>`;
     }
+
     let n = 6;
     if((firstDayofMonth + lastDateofMonth) <= 35){
         n = 13;
     }
+
     for (let i = lastDayofMonth; i < n; i++) { 
         // creating li of next month first days
         liTag += `<div class="day next-day">${i - lastDayofMonth + 1}</div>`

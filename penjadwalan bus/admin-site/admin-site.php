@@ -8,6 +8,7 @@ if(isset($_GET['logout'])){
     session_destroy();
     header("Location: ../index/index.php");
 }
+
 if (!isset($_SESSION['form_token'])) {
     $_SESSION['form_token'] = bin2hex(random_bytes(32));
 }
@@ -75,6 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
     }
+
     // Regenerate the form token for the next request
     $_SESSION['form_token'] = bin2hex(random_bytes(32));
 }
@@ -84,16 +86,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if(!isset($_SESSION['selected_date'])){
     $_SESSION['selected_date'] = date("Y-m-d");
     $selected_date = $_SESSION['selected_date'];
-    $event_query = "SELECT * FROM bus_schedule WHERE DATE(departure_time) = '$selected_date'";
-    //$event_query = "SELECT * FROM bus_schedule WHERE DATE('$selected_date') BETWEEN DATE(departure_time) AND DATE(arrival_time)";
-
+    $event_query = "SELECT * FROM bus_schedule WHERE DATE('$selected_date') BETWEEN DATE(departure_time) AND DATE(arrival_time)";
     $event_array = mysqli_query($db, $event_query);
 }
 
 if(isset($_POST['select_date'])){
     $_SESSION['selected_date'] = $_POST['select_date'];
     $selected_date = $_POST['select_date'];
-    $event_query = "SELECT * FROM bus_schedule WHERE DATE(departure_time) = '$selected_date'";
+    $event_query = "SELECT * FROM bus_schedule WHERE DATE('$selected_date') BETWEEN DATE(departure_time) AND DATE(arrival_time)";
     $event_array = mysqli_query($db, $event_query);
 }
 
@@ -144,19 +144,13 @@ if (isset($_POST['reset']) || isset($_SESSION['formDone']) || isset($_SESSION['e
         </div>
         <div class="menu">
             <ul class="menu-1">
-                <li class="menu-items selected">
+                <li class="menu-items">
                     <a href="#">
                         <i class="uil uil-home"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="menu-items">
-                    <a href="#">
-                        <i class="uil uil-user-square"></i>
-                        <p>Profile</p>
-                    </a>
-                </li>
-                <li class="menu-items">
+                <li class="menu-items selected">
                     <a href="#">
                         <i class="uil uil-calender"></i>
                         <p>Bus Schedule</p>
@@ -289,7 +283,7 @@ if (isset($_POST['reset']) || isset($_SESSION['formDone']) || isset($_SESSION['e
                 <div class="event-header">
                     <?php
                         $currentDate = new dateTime($_SESSION['selected_date']);
-                        $currentDate = $currentDate->format("Y F j");
+                        $currentDate = $currentDate->format("j F Y");
                         echo $currentDate;
                     ?>
                 </div>
@@ -298,9 +292,9 @@ if (isset($_POST['reset']) || isset($_SESSION['formDone']) || isset($_SESSION['e
                     if(isset($event_array)){
                         while($event_row = $event_array->fetch_assoc()){
                             $dTime = new dateTime($event_row["departure_time"]);
-                            $departTime = $dTime->format('H:i');
+                            $departTime = $dTime->format('j-F-Y H:i');
                             $aTime = new dateTime($event_row["arrival_time"]);
-                            $arriveTime = $aTime->format('H:i');
+                            $arriveTime = $aTime->format('j-F-Y H:i');
 
                             $duration = $dTime->diff($aTime);
                             $days = $duration->d;
@@ -317,10 +311,9 @@ if (isset($_POST['reset']) || isset($_SESSION['formDone']) || isset($_SESSION['e
                                         <div class="d-time">'.$departTime.'(Yogyakarta)</div>
                                         <div class="icon">➔</div>
                                         <div class="a-time">'.$arriveTime.'(Surabaya)</div>
-                                        '.$hours.'J '.$minute.'
                                     </div>
                                 </div>
-                                <div class="price">Rp.'.$event_row['price'].'</div>
+                                <div class="price">Rp.'.$event_row['price'].'('.$event_row['seats'].')</div>
                             </div>';
                         }
                     }
@@ -355,7 +348,6 @@ if (isset($_POST['reset']) || isset($_SESSION['formDone']) || isset($_SESSION['e
             tlForm.style.display = 'none';
             confirmForm.style.display = 'block';
         }
-
     </script>
     
     <?php // If there's an error
@@ -365,7 +357,7 @@ if (isset($_POST['reset']) || isset($_SESSION['formDone']) || isset($_SESSION['e
             <?php unset($_SESSION['error']); ?>
         </script>
     <?php } ?>
-
+    
     <?php 
     if (isset($_SESSION['errorAuthority'])) { ?>
         <script>

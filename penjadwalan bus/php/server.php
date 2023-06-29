@@ -44,7 +44,6 @@ if(isset($_POST['regBtn'])){
 if(isset($_POST['loginbtn'])){
     $username = mysqli_real_escape_string($db, $_POST['username']);
     $password = mysqli_real_escape_string($db, $_POST['password']);
-
     $password = md5($password);
     $query = "SELECT * FROM tb_user WHERE
     username = '$username' AND
